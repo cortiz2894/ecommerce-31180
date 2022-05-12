@@ -2,6 +2,7 @@ import './NavBar.css'
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const NavBar = () => {
 
@@ -25,7 +26,9 @@ const NavBar = () => {
                         <Button disableRipple style={{ backgroundColor: 'transparent' }} variant='text' className='navbar__btn'>Contacto</Button>
                     </li>
                 </ul>
-                <Button color="inherit">Login</Button>
+                <Button color="inherit">
+                    <ShoppingCartIcon /> 
+                </Button>
             </Toolbar>
         </AppBar>
     ) 
