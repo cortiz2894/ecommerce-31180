@@ -1,40 +1,22 @@
+import { useState, useEffect } from 'react';
 import CardItem from '../Card/Card'
 import { Grid } from '@mui/material';
 
-const CardList = ({title}) => {
-    const productos = [
-        {
-            title : 'Remera Oversize',
-            price : 1500,
-            image : 'musculosa1.jpeg'
-        },
-        {
-            title : 'Remera Oversize',
-            price : 1500,
-            image : 'musculosa1.jpeg'
-        },
-        {
-            title : 'Remera Oversize',
-            price : 1500,
-            image : 'musculosa1.jpeg'
-        },
-    ]
+const CardList = ({title, products}) => {
+    
     return(
         <>
         <h2>{title}</h2>
-        <Grid container >
-            <Grid item md={3}>
-                <CardItem title={"Remera Oversize"} price={2500} image={"musculosa1.jpeg"}/>
-            </Grid>
-            <Grid item md={3}>
-                <CardItem title={"Segunda Remera"} price={200} image={"musculosa2.jpeg"}/>
-            </Grid>
-            <Grid item md={3}>
-                <CardItem title={"Tercera Remera"} price={3200} image={"remera1.jpg"}/>
-            </Grid>
-            <Grid item md={3}>
-                <CardItem title={"Tercera Remera"} price={3200} image={"remera1.jpg"}/>
-            </Grid>
+        <Grid container spacing={2}>
+            {
+                products.map( ({title, price, image, id, stock}) => {
+                    return(
+                        <Grid item md={3} key={id}>
+                            <CardItem title={title} price={price} image={image} stock={stock}/>
+                        </Grid>
+                    )
+                })
+            }
         </Grid>
         </>
     )

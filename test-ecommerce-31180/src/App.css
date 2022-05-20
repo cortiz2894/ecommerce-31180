@@ -33,7 +33,9 @@ h1,h2,h3,h4,p,span,a,input {
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+.cart-container-icon > svg {
+  color: black;
+}
 .App-link {
   color: #61dafb;
 }
