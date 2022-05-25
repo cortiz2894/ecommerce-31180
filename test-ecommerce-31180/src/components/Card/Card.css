@@ -72,6 +72,7 @@
     padding-left: 10px;
     padding-right: 10px;
     font-weight: 600;
+    padding: 10px 0px;
 }
 
 .card-item__img-box {
@@ -82,4 +83,45 @@
     position: relative;
     z-index: 1;
     background: white;
+    padding: 0px 20px;
 }
+
+.card-item-container > .MuiCardContent-root {
+    padding-bottom: 15px !important;
+}
+
+.card-info-data p, .card-info-data span {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.card-info-data span {
+    font-weight: 900;
+}
+
+.card-item-container .card-item__data-box .card-item-button {
+    font-family: 'Lato';
+    text-transform: none;
+    background: black;
+    border-radius: 25px;
+    padding: 5px;
+    width: 100%;
+    box-shadow: none !important;
+    border: 1px solid black;
+}
+
+.card-item-container .card-item__data-box .card-item-button:hover {
+    background: white;
+    color: black;
+}
+
+.color-group-selector {margin-bottom: 15px;display: flex;}
+
+.color-group-selector button.color-selector {width: 20px;height: 20px;margin-right: 10px;cursor: pointer;border: 1px solid black;border-radius: 50%;}
+
+.green {background: #013488;}
+
+.red {background: #eeb444;}
+
+.black {background: black;}

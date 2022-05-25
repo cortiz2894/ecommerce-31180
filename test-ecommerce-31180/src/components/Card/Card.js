@@ -38,12 +38,16 @@ const CardItem = ({ image, title, price, stock }) => {
                             <p>{title}</p>
                             <span>$ {price}</span>
                         </div>
-                        <div className='count-item'>
-                            <Button onClick={removeCount}>-</Button>
+                        <div className='color-group-selector'>
+                            <button className='color-selector black'></button>
+                            <button className='color-selector green'></button>
+                            <button className='color-selector red'></button>
+
+                            {/* <Button onClick={removeCount}>-</Button>
                             <p>{count}</p>
-                            <Button onClick={addCount}>+</Button>
+                            <Button onClick={addCount}>+</Button> */}
                         </div>
-                        <Button variant={'contained'} className="card-item-button">Comprar</Button>
+                        <Button variant={'contained'} className="card-item-button">Agregar al carrito</Button>
                     </div>
                 </div>
             </CardContent>
