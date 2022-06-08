@@ -7,22 +7,29 @@ import Contacto from './pages/Contacto'
 import NotFound from './pages/NotFound';
 import Detalle from './pages/Detalle';
 import ProductList from './pages/ProductList';
-
+import ThemeProvider from './context/ThemeContext'
+import { CartProvider } from './context/CartContext';
+import Cart from './pages/Cart';
 
 function App() {
   return (
     //JSX
     <div className="App">
-      <BrowserRouter>
-        <NavBar/>
-        <Routes>
-            <Route path='/contact' element={<Contacto />}/>  
-            <Route path='/product/:id' element={<Detalle />} />
-            <Route path='/products/:category' element={<ProductList />}/>  
-            <Route path='/' element={<Home />}/>  
-            <Route path='*' element={<NotFound />}/>  
-        </Routes>
-      </BrowserRouter>
+      <CartProvider>
+        <ThemeProvider >
+          <BrowserRouter>
+            <NavBar/>
+            <Routes>
+                <Route path='/contact' element={<Contacto />}/>  
+                <Route path='/cart' element={<Cart />} />
+                <Route path='/product/:id' element={<Detalle />} />
+                <Route path='/products/:category' element={<ProductList />}/>  
+                <Route path='/' element={<Home />}/>  
+                <Route path='*' element={<NotFound />}/>  
+            </Routes>
+          </BrowserRouter>
+        </ThemeProvider>
+      </CartProvider>
     </div> 
 
   );

@@ -53,3 +53,106 @@ h1,h2,h3,h4,p,span,a,input {
 .swiper-button-next, .swiper-button-prev {
   color: black !important; 
 }
+
+.swiper.swiper-initialized.swiper-horizontal {
+  min-width: 100%;
+}
+
+.general-container.list-product-container {
+  display: flex;
+  max-width: 100vw;
+  margin-left: -16px;
+  margin-right: -16px;
+}
+
+.container-filters {
+  width: 350px;
+  margin-left: 16px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.container-filters + div {
+  width: calc(100% - 350px);
+}
+
+.container-filters + div .MuiGrid-container {
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+}
+
+.container-filters h4 {
+  text-align: left;
+  margin-top: 0px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.filter-category {
+  text-align: left;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.filter-category span {
+  font-size: 12px;
+}
+
+p.filter-category__name {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.container-filters > div:nth-last-child(1) {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+button.button-filter-submit:hover {
+  background: white;
+  color: black;
+}
+
+button.button-filter-submit {
+  margin-bottom: 10px;
+  border-radius: 40px;
+  border: 1px solid black;
+  margin-top: 10px;
+  padding: 10px;
+  font-family: 'Lato';
+  color: white;
+  background: black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button.button-filter-clean {
+  font-family: 'Lato';
+  background: none;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+.col-cart-table__head {display: flex;border-bottom: 1px solid #ccc;}
+
+.col-cart-table__head h2 {font-size: 14px;width: 20%;}
+
+.cart-table__content {display: flex;}
+.cart-table__content-img {width: 10% !important;}
+
+.cart-table__content-title {width: 30%;}
+
+.cart-table__content-price, .cart-table__content-quantity {width: 20%;}
+.cart-table__content > div {display: flex;justify-content: center;align-items: center;border-bottom: 1px solid #ccc;padding-bottom: 15px;}
+
+.cart-table__content-title {flex-direction: column;}
+
+.cart-footer {display: flex;justify-content: space-between;}
+
+.cart-footer button {/* background: black; */}
+
+.cart-checkout-details button {background: black;border-radius: 40px;text-transform: none;color: white;font-family: 'Lato';padding: 10px 20px;margin-top: 15px;font-size: 14px;}

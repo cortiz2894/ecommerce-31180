@@ -1,5 +1,5 @@
 import './NavBar.css'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -7,13 +7,18 @@ import Button from '@mui/material/Button';
 import CartWidget from '../CartWidget/CartWidget';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import ThemeSwitch from './ThemeSwitch';
+import { ThemeContext } from '../../context/ThemeContext';
+
 
 const NavBar = () => {
+    const { darkTheme } = useContext(ThemeContext)
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
       setAnchorEl(event.currentTarget);
     };
+
     const handleClose = () => {
       setAnchorEl(null);
     };
@@ -21,7 +26,7 @@ const NavBar = () => {
     const categories = ["musculosas", "remeras", "pantalones"]
 
     return (
-        <AppBar position="static" className='header-primary'>
+        <AppBar position="static" className={`header-primary ${darkTheme ? 'dark-mode' : ''}`}>
             <Toolbar>
                 <div className='container-logo'>
                     <img src="/logo_coderhouse.png" />
@@ -86,6 +91,7 @@ const NavBar = () => {
                         </Button>
                     </li>
                 </ul>
+                <ThemeSwitch />
                 <CartWidget />
             </Toolbar>
         </AppBar>

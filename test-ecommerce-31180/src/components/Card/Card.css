@@ -125,3 +125,7 @@
 .red {background: #eeb444;}
 
 .black {background: black;}
+
+.dark-mode .card-item__data-box {background: black;}
+
+.dark-mode * {color: white !important;}
