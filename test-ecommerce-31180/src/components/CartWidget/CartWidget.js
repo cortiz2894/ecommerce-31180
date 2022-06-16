@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
 
 const CartWidget = () =>  {
-    const { cartListItems } = useContext(CartContext)
+    const { cartListItems, deleteProduct } = useContext(CartContext)
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -17,9 +17,9 @@ const CartWidget = () =>  {
     const handleClose = () => {
         setAnchorEl(null);
     };
-
     return(
         <div className='cart-container-icon'>
+            <div>
             <ShoppingCartIcon 
                 color={'primary'} 
                 aria-controls={open ? 'basic-menu' : undefined}
@@ -27,6 +27,8 @@ const CartWidget = () =>  {
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
             />
+            <p style={{color: 'black'}}>{cartListItems.length}</p>
+            </div>
             <Menu
                 id="basic-menu"
                 anchorEl={anchorEl}
@@ -54,7 +56,7 @@ const CartWidget = () =>  {
                                 <span>$ {item.price}</span>
                             </div>
                             <div className='cart-prod__action'>
-                                <button>
+                                <button onClick={() => deleteProduct(item)}>
                                     <DeleteIcon />
                                 </button>
                             </div>
