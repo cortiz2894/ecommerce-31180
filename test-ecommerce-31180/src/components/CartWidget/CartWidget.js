@@ -5,6 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import DeleteIcon from '@mui/icons-material/Delete';
 import CartContext from '../../context/CartContext'
 import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 
 const CartWidget = () =>  {
     const { cartListItems } = useContext(CartContext)
@@ -60,7 +61,11 @@ const CartWidget = () =>  {
                         </div>
                         )
                     })}
-                    
+                    <div className='cart-checkout-details'>
+                        <Link to="/cart">
+                            <button style={{cursor: 'pointer'}} onClick={handleClose}>Terminar compra</button>
+                        </Link>
+                    </div>
                 </div>
             </Menu>
         </div>

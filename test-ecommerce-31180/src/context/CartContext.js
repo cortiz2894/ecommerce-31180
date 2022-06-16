@@ -13,13 +13,18 @@ const CartProvider = ({children}) => {
             setTotalPrice(totalPrice + product.price)
             return setCartListItems(cartListItems => [...cartListItems, product])
         }
-        console.log("El producto ya se encuentra en el carrito")
+    }
+
+    const cleanCartProducts = () => {
+        setTotalPrice(0)
+        setCartListItems([])
     }
 
     const data = {
         cartListItems,
         addProductToCart,
-        totalPrice
+        totalPrice,
+        cleanCartProducts
     }
 
     return(

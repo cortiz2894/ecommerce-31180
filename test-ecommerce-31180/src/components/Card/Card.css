@@ -1,5 +1,7 @@
 .card-item img {
     width: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 .card-item {
@@ -77,6 +79,8 @@
 
 .card-item__img-box {
     position: relative;
+    height: 420px;
+    width: 100%;
 }
 
 .card-item__data-box {
